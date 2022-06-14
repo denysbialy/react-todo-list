@@ -38,12 +38,14 @@ function App() {
   };
   return (
     <>
-      <Formik initialValues={{ notate: "" }} onSubmit={onSubmit}>
-        <Form>
+      <Formik initialValues={{ notate: "" }} onSubmit={onSubmit} >
+        <Form className={styles.container}>
           <h1>ToDo List</h1>
-          <Field type="text" name="notate" />
-          <button type="submit">Add Notate</button>
-          <ul>
+          <div className={styles.headerToDo}>
+            <Field type="text" name="notate" className={styles.inputCreateToDo}/>
+            <button type="submit">Add Notate</button>
+          </div>
+          <ul className={styles.toDoList}>
             {notatesList.map((elem) => (
               <li key={elem.id}>
                 <span onClick={() => toggleTodo(elem.id)}>
