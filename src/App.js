@@ -9,7 +9,6 @@ import { notEmpty } from "./utils/validations";
 function App() {
   const [notatesList, setNotatesList] = useState([]);
   
-  // const styless = cx({inputErrorToDo: isValid})
   const addNotes = (notesText) => {
     const newTodo = {
       notes: notesText,
@@ -45,7 +44,6 @@ function App() {
         validationSchema={notEmpty}
       >
         {(props) => {
-          console.log(props);
           return (
             <Form className={styles.container}>
               <h1>ToDo List</h1>
